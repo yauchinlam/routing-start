@@ -15,7 +15,7 @@ import { ServersService } from './servers/servers.service';
 const appRoutes: Routes  = [
   {path: '', component:  HomeComponent},
   {path: 'users', component:  UsersComponent},
-  {path: 'servers', component:  ServersComponent},
+  {path: 'servers', component:  ServersComponent}
 ];
 
 @NgModule({
@@ -31,7 +31,7 @@ const appRoutes: Routes  = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
