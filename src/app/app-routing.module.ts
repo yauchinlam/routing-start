@@ -10,6 +10,7 @@ import { UserComponent } from "./users/user/user.component";
 import { UsersComponent } from "./users/users.component";
 import { AuthGuard } from './auth-guard.service';
 import { CanDeactiveGuard } from './servers/can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 const appRoutes: Routes  = [
@@ -25,7 +26,8 @@ const appRoutes: Routes  = [
     {path: ':id', component:  ServerComponent},
     {path: ':id/edit', component:  EditServerComponent, canDeactivate: [CanDeactiveGuard]}
     ]},
-    {path: 'not-found', component: PageNotFoundComponent},
+    //{path: 'not-found', component: PageNotFoundComponent},
+    {path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
     //In this array order matters so ** needs to be last
     {path: '**', redirectTo: '/not-found'}
   ];
